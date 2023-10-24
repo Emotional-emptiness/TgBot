@@ -34,10 +34,16 @@ public class TelegramBot extends TelegramLongPollingBot{
                 case "/start":
                     StartCommandReceived(chatId, update.getMessage().getChat().getFirstName());
                     break;
-                case "cs2":
-                    SendMessageMethod(chatId, "cs2 is shit");
+                case "dota2":
+                    SendMessageMethod(chatId, "dota2 is shit");
                     break;
-                default: SendMessageMethod(chatId, "bro, this command is not supported");
+                case "ри":
+                    for (int i = 0; i < 26; i++) {
+                        SendMessageMethod(chatId, "I LOVE YOU");
+                    }
+                    SendMessageMethod(chatId, "My best girl!");
+                    break;
+                default: SendMessageMethod(chatId, "this command is not supported");
             }
         }
     }
