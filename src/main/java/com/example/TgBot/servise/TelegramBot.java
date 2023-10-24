@@ -33,6 +33,8 @@ public class TelegramBot extends TelegramLongPollingBot{
             switch (messageText) {
                 case "/start":
                 StartCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+                break;
+                default: SendMessageMethod(chatId, "bro, this command is not supported");
             }
         }
     }
@@ -48,7 +50,7 @@ public class TelegramBot extends TelegramLongPollingBot{
         try {
             execute(message);
         } catch (TelegramApiException e) {
-
+            throw new RuntimeException(e);
         }
     }
 }
